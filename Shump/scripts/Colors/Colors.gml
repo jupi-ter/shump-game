@@ -27,7 +27,7 @@ function GetColorByIndex(index){
 		case 4: return make_color_rgb(171, 82, 54);
 		case 5: return make_color_rgb(95, 87, 79);
 		case 6: return make_color_rgb(194, 195, 199);
-		case 7: return make_color_rgb(255, 241, 23);
+		case 7: return make_color_rgb(255, 241, 232);
 		case 8: return make_color_rgb(255, 0, 77);
 		case 9: return make_color_rgb(255, 163, 0);
 		case 10: return make_color_rgb(255, 236, 39);
