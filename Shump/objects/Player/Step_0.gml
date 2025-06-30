@@ -22,13 +22,18 @@ if (moving) {
 }
 
 if (keyboard_check(vk_space) && can_shoot) {
-	can_shoot = false;
-	alarm[0] = 5;
-	var bullet = instance_create_layer(x,y,"Instances", Bullet);
-	with (bullet) {
-		motion_add(90+random_range(-5,5), 5);		
+	if (currentWeapon == Machinegun || currentWeapon == TripleMachinegun) {
+		can_shoot = false;
+		alarm[0] = currentWeapon.fire_rate;
+	
+		for (i = 0; i < (currentWeapon == Machinegun ? 1 : 3); i++) {
+			var bullet = instance_create_layer(x,y,"Instances", Bullet);
+			with (bullet) {
+				motion_add(90+random_range(-5,5), 5);		
+			}
+			bullet.image_angle = bullet.direction;
+		}
 	}
-	bullet.image_angle = bullet.direction;
 }
 
 x+=moveX * spd;
