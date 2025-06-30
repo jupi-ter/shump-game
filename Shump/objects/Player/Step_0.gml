@@ -22,14 +22,25 @@ if (moving) {
 }
 
 if (keyboard_check(vk_space) && can_shoot) {
-	if (currentWeapon == Machinegun || currentWeapon == TripleMachinegun) {
-		can_shoot = false;
-		alarm[0] = currentWeapon.fire_rate;
-	
-		for (i = 0; i < (currentWeapon == Machinegun ? 1 : 3); i++) {
+	can_shoot = false;
+	alarm[0] = currentWeapon.fire_rate;
+		
+	if (currentWeapon == Machinegun) {
+		var bullet = instance_create_layer(x,y,"Instances", Bullet);
+		with (bullet) {
+				motion_add(90+random_range(-5,5), 5);		
+		}
+		bullet.image_angle = bullet.direction;
+		with (UberCont) {
+			shake += other.currentWeapon.screenshake;
+		}
+	}
+		
+	  if (currentWeapon == TripleMachinegun) {
+		for (var i = 0; i < 3; i++) {
 			var bullet = instance_create_layer(x,y,"Instances", Bullet);
 			with (bullet) {
-				motion_add(90+random_range(-5,5), 5);		
+				motion_add(60+15*(i+1)+random_range(-5,5), 5);		
 			}
 			bullet.image_angle = bullet.direction;
 		}

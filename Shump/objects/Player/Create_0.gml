@@ -4,9 +4,9 @@ can_shoot = true;
 hp = 3;
 	
 //weapon structs
-Machinegun = new Weapon(1, 5);
-TripleMachinegun  = new Weapon(1, 7);
-Shotgun = new Weapon(1, 15);
-Rockets = new Weapon(2, 25);
+Machinegun = new Weapon(1, 5, 2);
+TripleMachinegun  = new Weapon(1, 7, 4);
+Shotgun = new Weapon(1, 15, 3);
+Rockets = new Weapon(2, 25, 5);
 
 currentWeapon = Machinegun;
