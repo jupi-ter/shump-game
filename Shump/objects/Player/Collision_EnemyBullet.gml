@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 hp-=1;
+CreateExplosion(x,y,8,GetColorByIndex(global.Colors.Red));
 //squash and stretch
 image_xscale = 0.9;
 image_yscale = 1.4;
