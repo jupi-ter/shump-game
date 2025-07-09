@@ -19,6 +19,7 @@ function CreateExplosion(xx, yy, amount, _col) {
 	for (i = 0; i < amount; i++) {
 		with (CreateParticle(xx, yy, 1, 1, 0.05, i * ring_value, _col, 1)) {
 			motion_add(angle, 0.5);
+			descend = true;
 		}
 	}
 }

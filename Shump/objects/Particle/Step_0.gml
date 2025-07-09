@@ -9,3 +9,7 @@ if (setup) {
 		instance_destroy();
 	}
 }
+
+if (descend) {
+	y+=descent_speed
+}

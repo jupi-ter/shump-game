@@ -24,6 +24,7 @@
     {"name":"Particle","order":3,"path":"objects/Particle/Particle.yy",},
     {"name":"Spawner","order":5,"path":"objects/Spawner/Spawner.yy",},
     {"name":"Spreader","order":2,"path":"objects/Spreader/Spreader.yy",},
+    {"name":"Squid","order":9,"path":"objects/Squid/Squid.yy",},
     {"name":"UberCont","order":6,"path":"objects/UberCont/UberCont.yy",},
     {"name":"Utils","order":1,"path":"scripts/Utils/Utils.yy",},
     {"name":"Weapons","order":2,"path":"scripts/Weapons/Weapons.yy",},
@@ -36,5 +37,7 @@
     {"name":"sprShipWhite","order":6,"path":"sprites/sprShipWhite/sprShipWhite.yy",},
     {"name":"sprSpreader","order":2,"path":"sprites/sprSpreader/sprSpreader.yy",},
     {"name":"sprSpreaderFlash","order":5,"path":"sprites/sprSpreaderFlash/sprSpreaderFlash.yy",},
+    {"name":"sprSquid","order":10,"path":"sprites/sprSquid/sprSquid.yy",},
+    {"name":"sprSquidFlash","order":11,"path":"sprites/sprSquidFlash/sprSquidFlash.yy",},
   ],
 }
