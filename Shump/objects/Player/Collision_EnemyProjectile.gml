@@ -10,7 +10,11 @@ if (!bool_hitstun) {
 	//flash white
 	sprite_index = sprShipWhite;
 	alarm[1] = 7;
-	with (other) { instance_destroy(); }
+	
+	if (!other.lightning) {
+		with (other) { instance_destroy(); }
+	}
+	
 	if (hp<=0) {
 		CreateExplosion(x,y,8,GetColorByIndex(global.Colors.DarkGrey));
 		instance_destroy();

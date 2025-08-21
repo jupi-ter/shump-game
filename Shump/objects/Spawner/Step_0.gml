@@ -5,6 +5,8 @@ if (timer >= interval * game_get_speed(gamespeed_fps)) {
 	var xx = random_range(16, room_width-16);
 	var yy = -24;
 	
+	instance_create_layer(xx,yy,"Instances", YellowGuy);	
+	/*
 	var enemy = choose(0,1,2,3);
 	switch(enemy) {
 		case 0:
@@ -22,6 +24,6 @@ if (timer >= interval * game_get_speed(gamespeed_fps)) {
 		case 3:
 			instance_create_layer(xx,yy,"Instances", OrangeGuy);	
 		break;
-	}
+	}*/
 	
 }
