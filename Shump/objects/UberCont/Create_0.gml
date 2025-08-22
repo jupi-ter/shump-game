@@ -9,6 +9,8 @@ viewy2 = 0;
 
 shake = 0;
 kills = 0;
-hard = 0;
-area = 0;
-subarea = 0;
+
+current_xp = 0;
+base_xp = 10;
+xp_goal = base_xp;
+level = 1;

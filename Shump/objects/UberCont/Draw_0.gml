@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+// DRAW GUI
 
 if (instance_exists(Player)) {
 	for (var i = 0; i < Player.hp; i++) {
@@ -8,4 +7,6 @@ if (instance_exists(Player)) {
 }
 
 draw_set_color(GetColorByIndex(global.Colors.White));
+draw_set_font(FonteFudida)
 draw_text(8, 16, "SCORE: " + string(score));
+draw_text(8, 24, "XP: " + string(current_xp) + "/" + string(xp_goal));

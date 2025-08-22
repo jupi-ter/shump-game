@@ -12,3 +12,5 @@ has_first_entered = false;
 myColor = global.Colors.White;
 mySprite = sprSpreader;
 myHitSprite = sprSpreaderFlash;
+
+xp_yield=10;
