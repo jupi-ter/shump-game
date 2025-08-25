@@ -10,6 +10,8 @@ viewy2 = 0;
 shake = 0;
 kills = 0;
 
+kills_per_increase = 5;      // Increase difficulty every 5 kills
+
 current_xp = 0;
 base_xp = 10;
 xp_goal = base_xp;

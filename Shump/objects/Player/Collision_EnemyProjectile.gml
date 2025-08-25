@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (!bool_hitstun) {
+if (!bool_hitstun and other.is_collision_active) {
 	bool_hitstun = true;
 	hp-=other.damage;
 	CreateExplosion(x,y,8,GetColorByIndex(other.myColor));
@@ -11,9 +11,7 @@ if (!bool_hitstun) {
 	sprite_index = sprShipWhite;
 	alarm[1] = 7;
 	
-	if (!other.lightning) {
-		with (other) { instance_destroy(); }
-	}
+	with (other) { instance_destroy(); }
 	
 	if (hp<=0) {
 		CreateExplosion(x,y,8,GetColorByIndex(global.Colors.DarkGrey));

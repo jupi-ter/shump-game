@@ -33,6 +33,7 @@
     {"name":"UberCont","order":6,"path":"objects/UberCont/UberCont.yy",},
     {"name":"UberUpgrades","order":15,"path":"objects/UberUpgrades/UberUpgrades.yy",},
     {"name":"YellowGuy","order":13,"path":"objects/YellowGuy/YellowGuy.yy",},
+    {"name":"Script4","order":3,"path":"scripts/Script4/Script4.yy",},
     {"name":"Utils","order":1,"path":"scripts/Utils/Utils.yy",},
     {"name":"Weapons","order":2,"path":"scripts/Weapons/Weapons.yy",},
     {"name":"sprBullet","order":1,"path":"sprites/sprBullet/sprBullet.yy",},

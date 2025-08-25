@@ -55,6 +55,7 @@
     {"id":{"name":"YellowGuy","path":"objects/YellowGuy/YellowGuy.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Colors","path":"scripts/Colors/Colors.yy",},},
+    {"id":{"name":"Script4","path":"scripts/Script4/Script4.yy",},},
     {"id":{"name":"Utils","path":"scripts/Utils/Utils.yy",},},
     {"id":{"name":"Weapons","path":"scripts/Weapons/Weapons.yy",},},
     {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},},

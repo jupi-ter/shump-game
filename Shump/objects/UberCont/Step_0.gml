@@ -14,11 +14,12 @@ if (current_xp >= xp_goal) {
 
 	var offset = 38;
 	
-	for (i = 0; i <= 2; i++) {
-		instance_create_layer(width+(offset*i),height,"Instances",Button);
-	}
+	//for (i = 0; i <= 2; i++) {
+	//	instance_create_layer(width+(offset*i),height,"Instances",Button);
+	//}
 	
 }
+
 
 camera_set_view_pos(view_camera[0], random(shake)-shake/2, random(shake)-shake/2); 
 
