@@ -6,3 +6,4 @@ life_time = 30;
 alarm[0] = life_time;
 is_collision_active = false;
 alarm[1] = 10;
+creator_id = noone;

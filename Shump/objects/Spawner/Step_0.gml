@@ -9,28 +9,31 @@ if (timer<=0) {
 	var xx = random_range(16, room_width-16);
 	var yy = -24;
 	
-	var enemy = 4; //choose(0,1,2,3,4);
-	switch(enemy) {
-		/*case 0:
-			instance_create_layer(xx,yy,"Instances", Spreader);	
+	var enemy_index = choose(0,1,2,3,4);
+	var enemy_object = AlienParent;
+	switch(enemy_index) {
+		case 0:
+			 enemy_object = Spreader;
 		break;
 		
 		case 1:
-			instance_create_layer(xx,yy,"Instances", GreenGuy);	
+			enemy_object = GreenGuy;	
 		break;
 		
 		case 2:
-			instance_create_layer(xx,yy,"Instances", Squid);	
+			enemy_object = Squid;	
 		break;
 		
 		case 3:
-			instance_create_layer(xx,yy,"Instances", OrangeGuy);	
-		break;*/
+			enemy_object = OrangeGuy;	
+		break;
 		
 		case 4:
-			instance_create_layer(xx,yy,"Instances", YellowGuy);
+			enemy_object = YellowGuy;
 		break;
 	}
+	
+	instance_create_layer(xx,yy,"Instances", enemy_object);	
 	
 } else {
 	timer--;

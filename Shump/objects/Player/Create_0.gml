@@ -6,10 +6,8 @@ hp = 3;
 //invulnerable state after being hit
 bool_hitstun = false;
 
-//weapon structs
-Machinegun = new Weapon(1, 5, 2, true);
-TripleMachinegun  = new Weapon(1, 7, 4, true);
-Shotgun = new Weapon(1, 15, 3, false);
-Rockets = new Weapon(2, 25, 5, false);
-
-currentWeapon = Machinegun;
+// weapon data
+damage = 1;
+fire_rate = 5;
+screenshake = 3;
+is_automatic = true;

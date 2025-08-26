@@ -23,36 +23,20 @@ if (moving)
 	CreateParticle(x+random_range(-2,2),y+random_range(-2,2),random_size,random_size,0.1,random(359),GetColorByIndex(random_color), 1);
 }
 
-if (keyboard_check(vk_space) && can_shoot && currentWeapon.is_automatic) 
+if (keyboard_check(vk_space) && can_shoot && is_automatic) 
 {
 	can_shoot = false;
-	alarm[0] = currentWeapon.fire_rate;
+	alarm[0] = fire_rate;
 		
-	if (currentWeapon == Machinegun)
+	var bullet = instance_create_layer(x,y,"Instances", Bullet);
+	with (bullet)
 	{
-		var bullet = instance_create_layer(x,y,"Instances", Bullet);
-		with (bullet)
-		{
-			motion_add(90+random_range(-5,5), 5);		
-		}
-		bullet.image_angle = bullet.direction;
-		with (UberCont)
-		{
-			shake += other.currentWeapon.screenshake;
-		}
+		motion_add(90+random_range(-5,5), 5);		
 	}
-		
-	if (currentWeapon == TripleMachinegun)
+	bullet.image_angle = bullet.direction;
+	with (UberCont)
 	{
-		for (var i = 0; i < 3; i++)
-		{
-			var bullet = instance_create_layer(x,y,"Instances", Bullet);
-			with (bullet)
-			{
-				motion_add(60+15*(i+1)+random_range(-5,5), 5);		
-			}
-			bullet.image_angle = bullet.direction;
-		}
+		shake += other.screenshake;
 	}
 }
 
