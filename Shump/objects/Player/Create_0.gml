@@ -6,6 +6,8 @@ hp = 3;
 //invulnerable state after being hit
 bool_hitstun = false;
 
+flash = false;
+
 // weapon data
 damage = 1;
 fire_rate = 5;

@@ -14,7 +14,7 @@ if (can_shoot) {
 		player_angle = point_direction(x,y,Player.x, Player.y);
 	}
 	
-	with (instance_create_layer(x,y,"Instances",EnemyBullet)) {
+	with (instance_create_layer(x,y,"Instances",EnemyBullet_1)) {
 		motion_add(player_angle+random_range(5,-5), 0.5);
 		image_angle = direction;
 	}

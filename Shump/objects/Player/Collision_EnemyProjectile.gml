@@ -8,7 +8,7 @@ if (!bool_hitstun and other.is_collision_active) {
 	image_xscale = 0.9;
 	image_yscale = 1.4;
 	//flash white
-	sprite_index = sprShipWhite;
+	flash = true;
 	alarm[1] = 7;
 	
 	with (other) { instance_destroy(); }

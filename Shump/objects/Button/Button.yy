@@ -9,8 +9,8 @@
   "name":"Button",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"UI and VFX",
+    "path":"folders/Objects/UI and VFX.yy",
   },
   "parentObjectId":null,
   "persistent":false,
