@@ -11,5 +11,5 @@ if (setup) {
 }
 
 if (descend) {
-	y+=descent_speed
+	y+=descent_speed;
 }

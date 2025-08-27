@@ -3,7 +3,7 @@
 if (!bool_hitstun and other.is_collision_active) {
 	bool_hitstun = true;
 	hp-=other.damage;
-	CreateExplosion(x,y,8,GetColorByIndex(other.myColor));
+	CreateExplosion(x,y,GetColorByIndex(other.myColor));
 	//squash and stretch
 	image_xscale = 0.9;
 	image_yscale = 1.4;
@@ -14,7 +14,7 @@ if (!bool_hitstun and other.is_collision_active) {
 	with (other) { instance_destroy(); }
 	
 	if (hp<=0) {
-		CreateExplosion(x,y,8,GetColorByIndex(global.Colors.DarkGrey));
+		CreateExplosion(x,y,GetColorByIndex(global.Colors.DarkGrey));
 		instance_destroy();
 	}
 }

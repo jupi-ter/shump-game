@@ -9,6 +9,5 @@ sprite_index = myHitSprite;
 alarm[1] = 5;
 with (other) { instance_destroy(); }
 if (hp<=0) {
-	CreateExplosion(x,y,8,GetColorByIndex(myColor));
 	instance_destroy();
 }

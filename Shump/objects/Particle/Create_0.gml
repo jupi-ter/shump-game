@@ -6,7 +6,6 @@ shrink = 0.1;
 angle = 0;
 col = global.Colors.White;
 alpha = 1;
-
 descend = false;
 descent_speed = 0.5;
 setup = false;

@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha) {
+function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha, _descend = false) {
 	var particle = instance_create_layer(xx,yy,"Instances",Particle);
 	with (particle) {
 		angle = _angle;
@@ -9,18 +9,33 @@ function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha)
 		shrink = _shrink;
 		col = _col;
 		alpha = _alpha;
+		descend = _descend;
 		setup = true;
 	}
 	return particle;
 }
 
-function CreateExplosion(xx, yy, amount, _col) {
-	var ring_value = 360 / amount;
-	for (i = 0; i < amount; i++) {
-		with (CreateParticle(xx, yy, 1, 1, 0.05, i * ring_value, _col, 1)) {
-			motion_add(angle, 0.5);
-			descend = true;
-		}
+function CreateExplosion(_x, _y, _col, _radius = 10, _count = 25) {
+	for (var i = 0; i < _count; i++) {
+		// Random angle around circle
+		var ang = random(360);
+		
+		// Random radius (sqrt ensures uniform distribution)
+		var r = sqrt(random(1)) * _radius;
+		
+		// Convert polar → Cartesian
+		var px = _x + lengthdir_x(r, ang);
+		var py = _y + lengthdir_y(r, ang);
+		
+		// Randomize particle properties
+		var p_angle  = random(360);
+		var p_scale  = 0.9;//random_range(0.5, 1.5);
+		var p_shrink = 0.05;//random_range(0.95, 0.99);
+		var p_col    = _col; // could randomize further
+		var p_alpha  = 255;
+
+		// Create particle
+		CreateParticle(px, py, p_scale, p_scale, p_shrink, p_angle, p_col, p_alpha);
 	}
 }
 

@@ -1,40 +1,19 @@
-if (instance_exists(UberCont)) {
-	if (UberCont.kills % UberCont.kills_per_increase == 0) {
-		current_interval = max(min_interval_in_seconds, current_interval - reduction_per_step);
-	}
-}
-
 if (timer<=0) {
-	timer = current_interval;
+	timer = base_interval_in_seconds;
 	var xx = random_range(16, room_width-16);
 	var yy = -24;
 	
-	var enemy_index = choose(0,1,2,3,4);
-	var enemy_object = AlienParent;
-	switch(enemy_index) {
-		case 0:
-			 enemy_object = Spreader;
-		break;
-		
-		case 1:
-			enemy_object = GreenGuy;	
-		break;
-		
-		case 2:
-			enemy_object = Squid;	
-		break;
-		
-		case 3:
-			enemy_object = OrangeGuy;	
-		break;
-		
-		case 4:
-			enemy_object = YellowGuy;
-		break;
-	}
+	var amount_of_unique_enemies = array_length(UberCont.current_wave.enemy_pool);
+	var enemy_index = irandom(amount_of_unique_enemies - 1);
 	
-	instance_create_layer(xx,yy,"Instances", enemy_object);	
+	var enemy_instance = instance_create_layer(xx,yy,"Instances", UberCont.current_wave.enemy_pool[enemy_index]);
 	
+	//this was to add enemies to a stack.
+	//if (instance_exists(UberCont)) {
+	//	UberCont.enemy_stack.
+	//}
+		
 } else {
 	timer--;
 }
+

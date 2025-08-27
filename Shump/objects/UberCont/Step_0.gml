@@ -1,6 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (temp_kills >= current_wave.enemy_amount)
+{
+	temp_kills = 0;
+	wave_counter++;
+	current_wave = global.wave_list[wave_counter];
+}
+
 if (current_xp >= xp_goal) {
 	current_xp = 0;
 	level++;
@@ -19,7 +26,6 @@ if (current_xp >= xp_goal) {
 	//}
 	
 }
-
 
 camera_set_view_pos(view_camera[0], random(shake)-shake/2, random(shake)-shake/2); 
 

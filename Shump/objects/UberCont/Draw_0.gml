@@ -8,5 +8,5 @@ if (instance_exists(Player)) {
 
 draw_set_color(GetColorByIndex(global.Colors.White));
 draw_set_font(FonteFudida)
-draw_text(8, 16, "SCORE: " + string(score));
-draw_text(8, 24, "XP: " + string(current_xp) + "/" + string(xp_goal));
+draw_text(4, 16, "SCORE: " + string(score));
+draw_text(4, 28, "WAVE: " + string(current_wave.wave_number));

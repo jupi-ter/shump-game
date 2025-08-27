@@ -10,18 +10,24 @@ moveY = keyboard_check(vk_down) - keyboard_check(vk_up);
 if (moveX != 0)
 {
 	right = moveX;
-	image_angle = 15 * -right;
-} else image_angle = 0;
+	//image_angle = 10 * -right;
+	if (right == -1) sprite_index = sprShipLeft; 
+	if (right == 1) sprite_index = sprShipRight;
+} else {
+	image_angle = 0;
+	sprite_index = sprShipCenter;	
+}
 
 var moving = (moveX != 0 || moveY != 0);
 
-if (moving)
-{
+//if (moving)
+//{
 	//spawn particles
-	var random_size = random_range(1, 1.2);
-	var random_color = choose(global.Colors.White,global.Colors.Red, global.Colors.Yellow, global.Colors.Orange);
-	CreateParticle(x+random_range(-2,2),y+random_range(-2,2),random_size,random_size,0.1,random(359),GetColorByIndex(random_color), 1);
-}
+//}
+
+var random_size = random_range(0.6, 0.9);
+var random_color = choose(global.Colors.DarkPurple, global.Colors.Red, global.Colors.Yellow, global.Colors.Orange);
+CreateParticle(x+random_range(-2,2),y+4+random_range(-2,2),random_size,random_size,0.05,random(359),GetColorByIndex(random_color), 1, true);
 
 if (keyboard_check(vk_space) && can_shoot && is_automatic) 
 {
