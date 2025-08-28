@@ -1,9 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function Upgrade(_name, _desc, _apply_func) {
+function Upgrade(_name, _desc, _apply_func, _sprite = sprBullet) {
     return {
         name: _name,
         description: _desc,
+		sprite: _sprite,
         apply: _apply_func
     };
 }
