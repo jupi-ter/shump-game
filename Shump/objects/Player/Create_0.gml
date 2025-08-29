@@ -10,6 +10,6 @@ flash = false;
 
 // weapon data
 damage = 1;
-fire_rate = 5;
+fire_rate = 7;
 screenshake = 3;
 is_automatic = true;

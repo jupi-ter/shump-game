@@ -28,16 +28,20 @@ function CreateExplosion(_x, _y, _col, _radius = 10, _count = 25) {
 		var py = _y + lengthdir_y(r, ang);
 		
 		// Randomize particle properties
-		var p_angle  = random(360);
-		var p_scale  = 0.9;//random_range(0.5, 1.5);
-		var p_shrink = 0.05;//random_range(0.95, 0.99);
-		var p_col    = _col; // could randomize further
+		var p_angle  = ang; // align with radial direction
+		var p_scale  = 0.9; 
+		var p_shrink = 0.05;
+		var p_col    = _col;
 		var p_alpha  = 255;
 
 		// Create particle
-		CreateParticle(px, py, p_scale, p_scale, p_shrink, p_angle, p_col, p_alpha);
+		with (CreateParticle(px, py, p_scale, p_scale, p_shrink, p_angle, p_col, p_alpha)) {
+			// Propel it outward along the same angle
+			motion_add(ang, random_range(0.5, 0.9)); 
+		}
 	}
 }
+
 
 /// @param {number} x1  source X
 /// @param {number} y1  source Y
