@@ -14,5 +14,7 @@ fire_rate = 7;
 screenshake = 3;
 is_automatic = true;
 
+flash_and_squash_timer_in_frames = 7; //FRAMES
+
 //misc
 counter = 0;

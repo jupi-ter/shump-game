@@ -3,15 +3,16 @@
 hp-=other.damage;
 
 //squash and stretch
-var _xscale = 2;
-var _yscale = 2;
+var _xscale = 1.5;
+var _yscale = 0.9;
+var flash_and_squash_timer_in_frames = 5; //FRAMES
 
-//squash_stretch(self, _xscale, _yscale, 1);
+squash_and_stretch(self, _xscale, _yscale, frames_to_seconds(flash_and_squash_timer_in_frames));
 
 //flash white
 flash = true;
 
-alarm[Alarms.Flash] = 5;
+alarm[Alarms.Flash] = flash_and_squash_timer_in_frames; //FRAMES 
 
 with (other) { instance_destroy(); }
 if (hp<=0) {

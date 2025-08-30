@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+#macro FRAMES 60
+
 enum Alarms {
 	Shoot = 0,
 	Flash = 1,
@@ -114,7 +116,30 @@ function sleep(milliseconds) {
 	} until(get_timer() >= endTime);
 }
 
+/// @function squash_and_stretch(inst, target_xscale, target_yscale, duration)
+function squash_and_stretch(inst, target_xscale, target_yscale, duration) {
+    var tween = {
+        target    : inst,
+        orig_x    : inst.image_xscale,
+        orig_y    : inst.image_yscale,
+        target_x  : target_xscale,
+        target_y  : target_yscale,
+        duration  : duration,
+        timer     : 0
+    };
 
+    array_push(global.tweens, tween);
+}
 
+function seconds_to_frames(seconds) {
+    var result = seconds * FRAMES;
+    //show_debug_message("result StF: " + string(result));
+    return result;
+}
 
+function frames_to_seconds(frames) {
+    var result = frames / FRAMES;
+    //show_debug_message("result FtS: " + string(result));
+    return result;
+}
 

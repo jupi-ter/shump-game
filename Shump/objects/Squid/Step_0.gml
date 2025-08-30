@@ -10,7 +10,7 @@ if (can_shoot) {
 	for (var i = 1; i < 4; i++) {
 		var angle = i * -45;
 		with (instance_create_layer(x,y,"Instances",Flower)) {
-			motion_add(angle, 0.5);
+			motion_add(angle, other.projectile_speed);
 			image_angle = direction;
 		}
 	}

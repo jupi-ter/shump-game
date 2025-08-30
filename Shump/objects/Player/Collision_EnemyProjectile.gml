@@ -7,14 +7,16 @@ if (!bool_hitstun and other.is_collision_active) {
 	CreateExplosion(x,y,GetColorByIndex(other.myColor));
 	
 	//squash and stretch
-	image_xscale = 0.9;
-	image_yscale = 1.4;
-	
+	var _xscale = 1.5;
+	var _yscale = 0.9;
+
+	squash_and_stretch(self, _xscale, _yscale, frames_to_seconds(flash_and_squash_timer_in_frames));
+
 	//flash white
 	flash = true;
-	
-	alarm[Alarms.Flash] = 7;
-	alarm[Alarms.Hitstun] = 10;
+
+	alarm[Alarms.Flash] = flash_and_squash_timer_in_frames;
+	alarm[Alarms.Hitstun] = 15;
 	
 	with (other) { instance_destroy(); }
 	
