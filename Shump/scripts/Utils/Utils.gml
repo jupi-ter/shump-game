@@ -1,6 +1,13 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha, _descend = false) {
+
+enum Alarms {
+	Shoot = 0,
+	Flash = 1,
+	Hitstun = 2
+}
+
+function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha, _descend = false, _ascend = false, _descent_amnt = 0.5, _ascent_amnt = 0.5) {
 	var particle = instance_create_layer(xx,yy,"Instances",Particle);
 	with (particle) {
 		angle = _angle;
@@ -10,6 +17,9 @@ function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha,
 		col = _col;
 		alpha = _alpha;
 		descend = _descend;
+		ascend = _ascend;
+		descent_speed = _descent_amnt;
+		ascent_speed = _ascent_amnt;
 		setup = true;
 	}
 	return particle;
@@ -96,3 +106,15 @@ function draw_lightning(x1, y1, x2, y2, xmin, xmax, ymin, ymax) {
     draw_set_alpha(_alpha);
     return _drawn;
 }
+
+/// sleep(ms)
+function sleep(milliseconds) {
+	var endTime = get_timer() + (milliseconds*1000);
+	do {
+	} until(get_timer() >= endTime);
+}
+
+
+
+
+

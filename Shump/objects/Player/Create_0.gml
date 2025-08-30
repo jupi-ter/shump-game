@@ -13,3 +13,6 @@ damage = 1;
 fire_rate = 7;
 screenshake = 3;
 is_automatic = true;
+
+//misc
+counter = 0;

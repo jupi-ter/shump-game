@@ -13,3 +13,6 @@ myColor = global.Colors.White;
 mySprite = sprSpreader;
 flash = false;
 xp_yield=10;
+counter = 0;
+contact_damage = 1;
+is_collision_active = true;

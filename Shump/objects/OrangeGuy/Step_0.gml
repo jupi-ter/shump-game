@@ -7,7 +7,7 @@ event_inherited()
 
 if (can_shoot) {
 	can_shoot = false;
-	alarm[0] = shoot_interval;
+	alarm[Alarms.Shoot] = shoot_interval;
 	
 	var player_angle = 0.0
 	if (instance_exists(Player)) {

@@ -13,3 +13,7 @@ if (setup) {
 if (descend) {
 	y+=descent_speed;
 }
+
+if (ascend) {
+	y-=ascent_speed;
+}

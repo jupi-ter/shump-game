@@ -1,10 +1,26 @@
 time += 0.05;
+counter++;
+
 image_angle = amplitude * sin(time * angle_spd);
 
 y += descent_speed;
 
-var random_size = random_range(1, 1.2);
-CreateParticle(x+random_range(-2,2),y-2+random_range(-2,2),random_size,random_size,0.05,random(359),GetColorByIndex(myColor), 1);
+var part_base_random_size = random_range(0.5, 0.8);
+var range_value = 3;
+var shrink_value = 0.01;
+var alpha = 1;
+var part_generation_divisor = 3;
+var y_offset = 3;
+
+//y-2+random_range(-range_value,range_value)
+
+if (counter % part_generation_divisor == 0) {
+	CreateParticle(x+random_range(-range_value,range_value), y-y_offset, part_base_random_size, part_base_random_size, shrink_value, random(359), GetColorByIndex(myColor), alpha, false, true, 0.05, 0.25);
+}
+
+if (counter >= 60) {
+	counter = 0;
+}
 
 //var isOutsideRoom = (y < -16) || (y > room_height + 16);
 

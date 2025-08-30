@@ -1,10 +1,8 @@
-/// @description Insert description here
-// You can write your code in this editor
+
 if (!bool_hitstun and other.is_collision_active) {
 	bool_hitstun = true;
-	hp-=other.damage;
 	
-	CreateExplosion(x,y,GetColorByIndex(other.myColor));
+	hp-=other.contact_damage;
 	
 	//squash and stretch
 	image_xscale = 0.9;
@@ -12,14 +10,12 @@ if (!bool_hitstun and other.is_collision_active) {
 	
 	//flash white
 	flash = true;
-	
 	alarm[Alarms.Flash] = 7;
 	alarm[Alarms.Hitstun] = 10;
-	
-	with (other) { instance_destroy(); }
-	
+
 	if (hp<=0) {
 		CreateExplosion(x,y,GetColorByIndex(global.Colors.DarkGrey));
 		instance_destroy();
 	}
 }
+
