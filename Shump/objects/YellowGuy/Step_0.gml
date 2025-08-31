@@ -1,7 +1,6 @@
 
 event_inherited();
 
-
 if (can_shoot) {
 	can_shoot = false;
 	alarm[Alarms.Shoot] = shoot_interval;

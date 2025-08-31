@@ -2,6 +2,7 @@
 // You can write your code in this editor
 can_shoot = true;
 hp = 3;
+bombs = 3;
 
 //invulnerable state after being hit
 bool_hitstun = false;
