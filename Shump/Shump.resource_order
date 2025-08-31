@@ -57,6 +57,7 @@
     {"name":"sprHeart","order":1,"path":"sprites/sprHeart/sprHeart.yy",},
     {"name":"sprHUDBase","order":4,"path":"sprites/sprHUDBase/sprHUDBase.yy",},
     {"name":"sprLightningHitbox","order":3,"path":"sprites/sprLightningHitbox/sprLightningHitbox.yy",},
+    {"name":"sprMultiplierEx","order":6,"path":"sprites/sprMultiplierEx/sprMultiplierEx.yy",},
     {"name":"sprOrangeGuy","order":1,"path":"sprites/sprOrangeGuy/sprOrangeGuy.yy",},
     {"name":"sprParticle","order":2,"path":"sprites/sprParticle/sprParticle.yy",},
     {"name":"sprShipLeft","order":1,"path":"sprites/sprShipLeft/sprShipLeft.yy",},

@@ -142,4 +142,6 @@ function frames_to_seconds(frames) {
     return result;
 }
 
-
+function int_to_real_seconds(_number) {
+	return _number * 60;
+}

@@ -1,5 +1,28 @@
 /// @description Insert description here
-// You can write your code in this editor
+
+if (combo_counter > 0) {
+	combo_counter--;
+} else {
+	//combo ended.
+	multiplier = 1;
+}
+
+
+if (subscore_counter_in_seconds > 0) {
+	subscore_counter_in_seconds--;
+} else {
+	//counter ended.
+	subscore_counter_in_seconds = 0;
+	display_subscore = false;
+	score += (subscore * multiplier);
+	score = round(score);
+	subscore = 0;
+}
+
+//tally up score.
+if (visual_score < score) {
+  visual_score++;
+}
 
 if (temp_kills >= current_wave.enemy_amount)
 {

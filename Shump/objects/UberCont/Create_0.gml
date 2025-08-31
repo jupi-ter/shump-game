@@ -1,11 +1,15 @@
 /// @description Insert description here
-// You can write your code in this editor
+//score related 
 score = 0;
+visual_score = 0;
+target_score = 0;
 subscore = 0;
 display_subscore = false;
+subscore_counter_in_seconds = 0;
 multiplier = 1;
+combo_counter = 0;
 
-//screen related shit
+//screen related
 viewx = 0;
 viewy = 0;
 viewx2 = 0;

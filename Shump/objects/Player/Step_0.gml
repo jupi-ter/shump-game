@@ -11,22 +11,7 @@ moveY = keyboard_check(vk_down) - keyboard_check(vk_up);
 x+=moveX * spd;
 y+=moveY * spd;
 
-//clamping
-var half_w = sprite_get_width(sprite_index) * 0.5 * image_xscale;
-var half_h = sprite_get_height(sprite_index) * 0.5 * image_yscale;
-
-var left_padding = 0;
-var right_padding = 0;
-var top_padding = 0;
-var bottom_padding = 32;
-
-var left = left_padding;
-var right = room_width - half_w;
-var top = top_padding;
-var bottom = room_height - bottom_padding - half_h;
-
-x = clamp(x, left, right);
-y = clamp(y, top, bottom);
+// must clamp again!!!
 
 if (moveX != 0)
 {

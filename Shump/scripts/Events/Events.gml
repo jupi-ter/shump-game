@@ -61,9 +61,17 @@ EventManager.trigger(global.EventNames.PlayerHit, payload);
 function on_alien_death(payload) {
     //show_debug_message("onAlienDeath Payload: " + string(payload.score_amount));
     
+    var subscore_increment_in_seconds = int_to_real_seconds(2);
+    var combo_increment_in_seconds = int_to_real_seconds(1);
+    var multiplier_increment = 0.1;
     
     if (instance_exists(UberCont)) {
         UberCont.display_subscore = true;
+        UberCont.subscore_counter_in_seconds = subscore_increment_in_seconds;
         UberCont.subscore += payload.score_amount;
+        UberCont.combo_counter += combo_increment_in_seconds;
+        if (UberCont.combo_counter > 0) { //and UberCont.combo_counter != 0
+            UberCont.multiplier += multiplier_increment;
+        }
     }
 }
