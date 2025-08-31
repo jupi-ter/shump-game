@@ -14,7 +14,9 @@ flash = true;
 
 alarm[Alarms.Flash] = flash_and_squash_timer_in_frames; //FRAMES 
 
-with (other) { instance_destroy(); }
 if (hp<=0) {
+	instigator = other.parent_instance;
 	instance_destroy();
 }
+
+with (other) { instance_destroy(); }

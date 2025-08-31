@@ -8,10 +8,30 @@ counter++;
 moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
 moveY = keyboard_check(vk_down) - keyboard_check(vk_up);
 
+x+=moveX * spd;
+y+=moveY * spd;
+
+//clamping
+var half_w = sprite_get_width(sprite_index) * 0.5 * image_xscale;
+var half_h = sprite_get_height(sprite_index) * 0.5 * image_yscale;
+
+var left_padding = 0;
+var right_padding = 0;
+var top_padding = 0;
+var bottom_padding = 32;
+
+var left = left_padding;
+var right = room_width - half_w;
+var top = top_padding;
+var bottom = room_height - bottom_padding - half_h;
+
+x = clamp(x, left, right);
+y = clamp(y, top, bottom);
+
 if (moveX != 0)
 {
 	right = moveX;
-	//image_angle = 10 * -right;
+	image_angle = 5 * -right;
 	if (right == -1) sprite_index = sprShipLeft; 
 	if (right == 1) sprite_index = sprShipRight;
 } else {
@@ -47,6 +67,7 @@ if (keyboard_check(vk_space) && can_shoot && is_automatic)
 	var bullet = instance_create_layer(x,y,"Instances", Bullet);
 	with (bullet)
 	{
+		parent_instance = other.id;
 		motion_add(90+random_range(-5,5), 5);		
 	}
 	bullet.image_angle = bullet.direction;
@@ -55,6 +76,3 @@ if (keyboard_check(vk_space) && can_shoot && is_automatic)
 		shake += other.screenshake;
 	}
 }
-
-x+=moveX * spd;
-y+=moveY * spd;

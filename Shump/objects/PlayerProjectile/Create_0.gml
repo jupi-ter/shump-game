@@ -3,3 +3,4 @@
 damage = 0;
 myColor = global.Colors.White;
 is_collision_active = true;
+parent_instance = noone;

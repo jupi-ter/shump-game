@@ -24,11 +24,17 @@ if (counter >= 60) {
 
 //var isOutsideRoom = (y < -16) || (y > room_height + 16);
 
+/*
 if (y > room_height) {
 	move_wrap(false, true, 16);
     if (descent_speed < descent_limit) {
         descent_speed += 0.1;
     }
+}*/
+
+if (y > HEIGHT_LIMIT + sprite_get_height(sprite_index) * 0.5) {
+	instigator = noone;
+	instance_destroy(self);
 }
 
 //?

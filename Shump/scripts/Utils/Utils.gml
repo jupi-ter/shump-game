@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 #macro FRAMES 60
+#macro HEIGHT_LIMIT 96
 
 enum Alarms {
 	Shoot = 0,
@@ -133,13 +134,12 @@ function squash_and_stretch(inst, target_xscale, target_yscale, duration) {
 
 function seconds_to_frames(seconds) {
     var result = seconds * FRAMES;
-    //show_debug_message("result StF: " + string(result));
     return result;
 }
 
 function frames_to_seconds(frames) {
     var result = frames / FRAMES;
-    //show_debug_message("result FtS: " + string(result));
     return result;
 }
+
 

@@ -4,7 +4,7 @@
 CreateExplosion(x,y,GetColorByIndex(myColor));
 sleep(10);
 
-if (instance_exists(UberCont)) {
+if (instance_exists(UberCont) and instigator != noone) {
 	with (UberCont) {
 		score += other.reward;
 		current_xp += other.xp_yield;
