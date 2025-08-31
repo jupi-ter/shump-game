@@ -1,5 +1,6 @@
 global.EventNames = {
-    AlienHit:  "AlienHit"
+    AlienHit:  "AlienHit",
+    ScrapPickup : "ScrapPickup"
 };
 
 /// event_manager.gml
@@ -58,7 +59,7 @@ EventManager.trigger(global.EventNames.PlayerHit, payload);
 */
 
 //this is a callback
-function on_alien_death(payload) {
+/*function on_alien_death_subscore(payload) {
     //show_debug_message("onAlienDeath Payload: " + string(payload.score_amount));
     
     var subscore_increment_in_seconds = int_to_real_seconds(2);
@@ -73,5 +74,17 @@ function on_alien_death(payload) {
         if (UberCont.combo_counter > 0) { //and UberCont.combo_counter != 0
             UberCont.multiplier += multiplier_increment;
         }
+    }
+}*/
+
+function on_alien_death(payload) {
+    if (instance_exists(UberCont)) {
+        UberCont.actual_score += payload.score_amount;
+    }
+}
+
+function on_scrap_pickup(payload) {
+    if (instance_exists(UberCont)) {
+        UberCont.current_xp++;
     }
 }

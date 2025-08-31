@@ -12,6 +12,12 @@ if (instigator != noone) {
 	EventManager.trigger(global.EventNames.AlienHit, payload);
 }
 
+//create scrap
+var range = 3;
+repeat (xp_yield) {
+	instance_create_layer(x + random_range(-range,range), y+random_range(-range, range) , "Instances", Scrap);
+}
+
 //maintain this here for now
 if (instance_exists(UberCont) and instigator != noone) {
 	with (UberCont) {

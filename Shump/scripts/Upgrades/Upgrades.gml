@@ -10,20 +10,16 @@ function Upgrade(_name, _desc, _apply_func, _sprite = sprBullet) {
 }
 
 global.upgrade_pool = [
-    Upgrade("Damage Up", "Increase bullet damage by 2.", function(player) {
-        player.damage += 2;
+    Upgrade("Fire Rate", "Increase fire rate by 15%.", function(Player) {
+        Player.fire_rate *= 0.85;
     }),
     
-    Upgrade("Fire Rate", "Increase fire rate by 15%.", function(player) {
-        player.fire_rate *= 0.85;
+    Upgrade("Extra Life", "Gain +1 life.", function(Player) {
+        Player.hp++;
     }),
     
-    Upgrade("Extra Life", "Gain +1 life.", function(player) {
-        player.lives += 1;
-    }),
-    
-    Upgrade("Spread Shot", "Bullets fire in 3-way spread.", function(player) {
-        player.shoot_mode = "spread";
+	Upgrade("Extra Bullet", "Gain +1 bullet.", function(Player) {
+        Player.bullet_amount++;
     })
 ];
 

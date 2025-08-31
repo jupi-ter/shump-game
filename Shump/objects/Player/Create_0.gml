@@ -14,6 +14,10 @@ damage = 1;
 fire_rate = 7;
 screenshake = 3;
 is_automatic = true;
+bullet_amount = 1;
+bullet_speed = 5;
+bullet_spread_value = 5;
+//bullet_type = 0;
 
 flash_and_squash_timer_in_frames = 7; //FRAMES
 

@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"PlayerProjectile",
+  "%Name":"Scrap",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"BulletBlocker","path":"objects/BulletBlocker/BulletBlocker.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"Player","path":"objects/Player/Player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":3,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"PlayerProjectile",
+  "name":"Scrap",
   "overriddenProperties":[],
   "parent":{
-    "name":"Projectiles",
-    "path":"folders/Objects/Projectiles.yy",
+    "name":"Upgrades",
+    "path":"folders/Objects/Upgrades.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprScrap",
+    "path":"sprites/sprScrap/sprScrap.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

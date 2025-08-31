@@ -7,7 +7,8 @@
 enum Alarms {
 	Shoot = 0,
 	Flash = 1,
-	Hitstun = 2
+	Hitstun = 2,
+	Fade = 3
 }
 
 function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha, _descend = false, _ascend = false, _descent_amnt = 0.5, _ascent_amnt = 0.5) {

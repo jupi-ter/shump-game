@@ -13,6 +13,7 @@ if (can_shoot) {
 	
 	with (instance_create_layer(x,y,"Instances",EnemyBullet_1)) {
 		motion_add(player_angle+random_range(5,-5), other.projectile_speed);
+		set_speed = other.projectile_speed;
 		image_angle = direction;
 	}
 }
