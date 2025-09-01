@@ -32,6 +32,19 @@ if (!display_boon_text) {
 	if (current_upgrade != undefined) {
 		draw_text(64, 30, string_lower(current_upgrade.name));
 		draw_text(64, 36, string_lower(current_upgrade.description));
+		//draw choices
+		for (i = 0; i < choices; i++) {
+			draw_set_halign(fa_left);
+			//draw button
+			var button_offset = choice_display_xstart + choice_display_offset * i;
+			draw_sprite(sprButton, 0, button_offset, choice_display_y);
+			//draw upgrade sprite
+			//todo: change this to the random upgrade, currently just use the global list.
+			var upgrade_to_display = global.upgrade_pool[i];
+			draw_sprite(upgrade_to_display.sprite, 0, button_offset, choice_display_y);
+		}
+		draw_set_halign(fa_left);
+		draw_sprite(sprArrow, 0, choice_display_xstart + choice_display_offset * choice_idx, choice_arrow_y);
 	}
 }
 

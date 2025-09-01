@@ -45,7 +45,6 @@ if (current_xp >= xp_goal) {
 }
 
 if (display_boon_text) {
-	var choices = 3;
 	
 	if (keyboard_check_pressed(vk_right) && (choice_idx+1 < choices)) {
         choice_idx++;

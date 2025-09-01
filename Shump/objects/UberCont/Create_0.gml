@@ -30,8 +30,13 @@ current_xp = 0;
 base_xp = 10;
 xp_goal = base_xp;
 level = 1;
+choices = 3;
 current_upgrade = undefined;
 choice_idx = 0;
+choice_display_xstart = 24;
+choice_display_offset = 38;
+choice_display_y = 64;
+choice_arrow_y = 96;
 
 //font
 WeiholmirFont = font_add_sprite(sprWeiholmirFont, ord(" "), true, 1);
