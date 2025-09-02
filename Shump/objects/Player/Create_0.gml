@@ -12,9 +12,9 @@ flash = false;
 // weapon data
 damage = 1;
 fire_rate = 7;
-screenshake = 3;
+screenshake = 1;
 is_automatic = true;
-bullet_amount = 1;
+bullet_amount = 3;
 bullet_speed = 5;
 bullet_spread_value = 5;
 //bullet_type = 0;

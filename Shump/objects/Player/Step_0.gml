@@ -51,14 +51,35 @@ if (!global.pause) {
 		alarm[Alarms.Shoot] = fire_rate;
 			
 		for (i = 0; i < bullet_amount; i++) {
-			with (instance_create_layer(x,y,"Instances", Bullet))
-			{
-				parent_instance = other.id;
-				motion_add(90+random_range(-other.bullet_spread_value,other.bullet_spread_value), other.bullet_speed);
-				set_speed = other.bullet_speed;
-				image_angle = direction;
-			}
-			UberCont.shake += other.screenshake;
+			ShootPattern(bullet_amount, i);
 		}
+		UberCont.shake += other.screenshake;
+	}
+}
+
+function ShootPattern(_amount, _index) {
+	var angle = 0;
+	switch(_amount) {
+		case 1:
+		case 2:
+		angle = 90;
+		break;
+		
+		default:
+		var step = 35 / (_amount - 1);
+		var base_start = 90 - 35 / 2;
+		angle = base_start + _index * step;
+		break;
+	}
+	ShootBullet(angle);
+}
+
+function ShootBullet(_angle) {
+	with (instance_create_layer(x,y,"Instances", Bullet))
+	{	
+		parent_instance = other.id;
+		motion_add(_angle+random_range(-other.bullet_spread_value,other.bullet_spread_value), other.bullet_speed);
+		set_speed = other.bullet_speed;
+		image_angle = direction;
 	}
 }

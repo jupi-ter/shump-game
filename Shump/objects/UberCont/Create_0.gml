@@ -12,7 +12,7 @@ multiplier = 1;
 combo_counter = 0;
 
 //screen related
-viewx = 0;
+viewx = 0;      
 viewy = 0;
 viewx2 = 0;
 viewy2 = 0;

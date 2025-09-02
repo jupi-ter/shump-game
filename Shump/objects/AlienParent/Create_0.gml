@@ -19,3 +19,7 @@ is_collision_active = true;
 projectile_speed = 0.5;
 //who killed me?
 instigator = noone;
+
+if (instance_exists(UberEnemies)) {
+	array_push(global.enemy_entities, self);
+}
