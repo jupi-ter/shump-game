@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 #macro FRAMES 60
-#macro HEIGHT_LIMIT 96
+#macro HEIGHT_LIMIT 128
 
 enum Alarms {
 	Shoot = 0,

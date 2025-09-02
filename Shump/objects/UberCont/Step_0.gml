@@ -53,7 +53,14 @@ if (display_boon_text) {
         choice_idx--;
     }
     
+    
     current_upgrade = global.upgrade_pool[choice_idx];
+    
+    if (keyboard_check_pressed(vk_space)) {
+    	current_upgrade.apply();
+    	global.pause = false;
+    	display_boon_text = false;
+    }
 }
 
 camera_set_view_pos(view_camera[0], random(shake)-shake/2, random(shake)-shake/2); 

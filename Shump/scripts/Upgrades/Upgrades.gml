@@ -16,7 +16,7 @@ global.upgrade_pool = [
     
     Upgrade("Extra Life", "Gain +1 life.", function(Player) {
         Player.hp++;
-    }),
+    }, sprHeart),
     
 	Upgrade("Extra Bullet", "Gain +1 bullet.", function(Player) {
         Player.bullet_amount++;
