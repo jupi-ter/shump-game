@@ -35,7 +35,7 @@ if (temp_kills >= current_wave.enemy_amount)
 }
 
 if (current_xp >= xp_goal) {
-	current_xp = 0;
+	current_xp -= xp_goal;
 	level++;
 	xp_goal = base_xp * level;
 	

@@ -1,8 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+sleep(20);
+
 CreateExplosion(x,y,GetColorByIndex(myColor));
-sleep(10);
+CreateSmokeDust(x,y);
+
 
 if (instigator != noone) {
 	var payload = {

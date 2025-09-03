@@ -1,2 +1,2 @@
 /// @description Hitstun alarm
-bool_hitstun = false;
+//bool_hitstun = false;

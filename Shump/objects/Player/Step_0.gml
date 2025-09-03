@@ -6,13 +6,36 @@ if (!global.pause) {
 	var spd = 2;
 	counter++;
 	
-	moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
-	moveY = keyboard_check(vk_down) - keyboard_check(vk_up);
+	// Get movement input
+	var moveX = keyboard_check(vk_right) - keyboard_check(vk_left);
+	var moveY = keyboard_check(vk_down) - keyboard_check(vk_up);
 	
-	x+=moveX * spd;
-	y+=moveY * spd;
+	// Normalize diagonal movement
+	if (moveX != 0 || moveY != 0) {
+	    var len = point_distance(0, 0, moveX, moveY);
+	    moveX /= len;
+	    moveY /= len;
+	}
+	
+	// Target velocity
+	var target_vx = moveX * spd;
+	var target_vy = moveY * spd;
+	
+	// Smoothly approach target velocity
+	vx += (target_vx - vx) * smoothing_factor;
+	vy += (target_vy - vy) * smoothing_factor;
+	
+	// Move
+	x += vx;
+	y += vy;
 	
 	// must clamp again!!!
+	var half_w = sprite_width  * 0.5;
+	var half_h = sprite_height * 0.5;
+
+	x = clamp(x, half_w, 128 - half_w);
+	y = clamp(y, half_h, 128 - half_h);
+	
 	
 	if (moveX != 0)
 	{

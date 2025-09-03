@@ -29,7 +29,7 @@ function CreateParticle(xx, yy, _xscale, _yscale, _shrink, _angle, _col, _alpha,
 	return particle;
 }
 
-function CreateExplosion(_x, _y, _col, _radius = 10, _count = 25) {
+function CreateExplosion(_x, _y, _col, _radius = 10, _count = 30) {
 	for (var i = 0; i < _count; i++) {
 		// Random angle around circle
 		var ang = random(360);
@@ -43,8 +43,8 @@ function CreateExplosion(_x, _y, _col, _radius = 10, _count = 25) {
 		
 		// Randomize particle properties
 		var p_angle  = ang; // align with radial direction
-		var p_scale  = 0.9; 
-		var p_shrink = 0.05;
+		var p_scale  = 0.5; 
+		var p_shrink = 0.01;
 		var p_col    = _col;
 		var p_alpha  = 255;
 
@@ -56,6 +56,35 @@ function CreateExplosion(_x, _y, _col, _radius = 10, _count = 25) {
 	}
 }
 
+function CreateSmokeDust(_x, _y, _col = GetColorByIndex(global.Colors.DarkGrey), _radius = 5, _count = 15) {
+	for (var i = 0; i < _count; i++) {
+		// Random angle (so dust can drift any direction)
+		var ang = random(360);
+
+		// Radius spread, smaller since dust is more localized
+		var r = sqrt(random(1)) * _radius;
+
+		// Position around origin
+		var px = _x + lengthdir_x(r, ang);
+		var py = _y + lengthdir_y(r, ang);
+
+		// Particle properties (slower + softer than explosion)
+		var p_angle  = random(360);    // random spin, doesn’t matter much
+		var p_scale  = random_range(0.8, 1.4); // bigger puff sizes
+		var p_shrink = 0.0025;         // shrink much slower than explosion
+		var p_col    = _col;
+		var p_alpha  = 200;            // slightly transparent
+
+		// Create dust particle
+		with (CreateParticle(px, py, p_scale, p_scale, p_shrink, p_angle, p_col, p_alpha)) {
+			// Gentle outward drift (much slower than explosion)
+			motion_add(ang, random_range(0.05, 0.15));
+
+			// Make it fade slowly
+			alpha_step = 0.05; // decrease alpha each step
+		}
+	}
+}
 
 /// @param {number} x1  source X
 /// @param {number} y1  source Y

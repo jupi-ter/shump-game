@@ -1,7 +1,6 @@
 
 if (!bool_hitstun and other.is_collision_active) {
 	bool_hitstun = true;
-	
 	hp-=other.contact_damage;
 	
 	//squash and stretch
@@ -14,11 +13,10 @@ if (!bool_hitstun and other.is_collision_active) {
 	flash = true;
 
 	alarm[Alarms.Flash] = flash_and_squash_timer_in_frames;
-	alarm[Alarms.Hitstun] = 10;
+	alarm[Alarms.Fade] = hitstun_timer;
 
 	if (hp<=0) {
 		CreateExplosion(x,y,GetColorByIndex(global.Colors.DarkGrey));
 		instance_destroy();
 	}
 }
-

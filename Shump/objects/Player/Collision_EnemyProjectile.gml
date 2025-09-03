@@ -16,7 +16,7 @@ if (!bool_hitstun and other.is_collision_active) {
 	flash = true;
 
 	alarm[Alarms.Flash] = flash_and_squash_timer_in_frames;
-	alarm[Alarms.Hitstun] = 15;
+	alarm[Alarms.Fade] = hitstun_timer;
 	
 	with (other) { instance_destroy(); }
 	
