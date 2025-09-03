@@ -53,6 +53,7 @@
     {"name":"Weapons","order":2,"path":"scripts/Weapons/Weapons.yy",},
     {"name":"bgStars2","order":1,"path":"sprites/bgStars2/bgStars2.yy",},
     {"name":"sprArrow","order":7,"path":"sprites/sprArrow/sprArrow.yy",},
+    {"name":"sprBar","order":8,"path":"sprites/sprBar/sprBar.yy",},
     {"name":"sprBomb","order":3,"path":"sprites/sprBomb/sprBomb.yy",},
     {"name":"sprEnemyBullet_1","order":2,"path":"sprites/sprEnemyBullet_1/sprEnemyBullet_1.yy",},
     {"name":"sprEnemyBullet","order":1,"path":"sprites/sprEnemyBullet/sprEnemyBullet.yy",},

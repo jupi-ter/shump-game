@@ -83,6 +83,7 @@
     {"id":{"name":"bgStars1","path":"sprites/bgStars1/bgStars1.yy",},},
     {"id":{"name":"bgStars2","path":"sprites/bgStars2/bgStars2.yy",},},
     {"id":{"name":"sprArrow","path":"sprites/sprArrow/sprArrow.yy",},},
+    {"id":{"name":"sprBar","path":"sprites/sprBar/sprBar.yy",},},
     {"id":{"name":"sprBomb","path":"sprites/sprBomb/sprBomb.yy",},},
     {"id":{"name":"sprBullet","path":"sprites/sprBullet/sprBullet.yy",},},
     {"id":{"name":"sprBulletBlocker","path":"sprites/sprBulletBlocker/sprBulletBlocker.yy",},},
