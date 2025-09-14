@@ -31,7 +31,7 @@ if (temp_kills >= current_wave.enemy_amount)
 {
 	temp_kills = 0;
 	wave_counter++;
-	current_wave = global.wave_list[wave_counter];
+	current_wave = GenerateWave(wave_counter);
 }
 
 if (current_xp >= xp_goal) {

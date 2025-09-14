@@ -21,8 +21,8 @@ shake = 0;
 //waves and kills
 total_kills = 0;
 temp_kills = 0;
-wave_counter = 0;
-current_wave = global.wave_list[wave_counter];
+wave_counter = 1;
+current_wave = GenerateWave(wave_counter);
 
 //level and upgrades
 display_boon_text = false;
